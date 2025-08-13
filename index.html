@@ -1,32 +1,12 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1242800523810664'); 
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1242800523810664&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Official trader — Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --accent: 255,179,0;
-    }
+    :root{ --accent: 255,179,0; }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -40,17 +20,14 @@
       padding:28px;
       overflow: hidden;
     }
-
-    /* Background image with opacity */
     body::before {
       content: "";
       position: absolute;
       inset: 0;
       background: url('deepak.png') center/cover no-repeat;
-      opacity: 0.4; /* यहां से opacity बदल सकते हो */
+      opacity: 0.4;
       z-index: -1;
     }
-
     body::after {
       content: "";
       position: absolute;
@@ -58,7 +35,6 @@
       background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.75));
       z-index: -1;
     }
-
     .card{
       max-width:440px;
       width:100%;
@@ -96,6 +72,25 @@
     ul.features{ list-style:none; padding:0; margin:20px 0; text-align:left; font-size:14px; }
     ul.features li{ margin-bottom:10px; }
   </style>
+
+  <!-- ✅ Meta Pixel Code (moved to bottom of head) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1242800523810664'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1242800523810664&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <main class="card">
@@ -117,7 +112,7 @@
     const cdEl = document.getElementById('cdValue');
     function format(s){
       const mm = String(Math.floor(s/60)).padStart(2,'0');
-      const ss = String(s%60).padStart(2,'0');
+      const ss = String(s%60)).padStart(2,'0');
       return `${mm}:${ss}`;
     }
     cdEl.textContent = format(seconds);
